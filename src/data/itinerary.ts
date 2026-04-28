@@ -7,7 +7,7 @@ export const MEMBERS: Member[] = [
     role: '总编导 / 美学担当',
     desc: '捕捉每一个光影瞬间，负责所有美照产出，也是大家的穿搭顾问。',
     color: '#FFD5D5',
-    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Aria&mouth=smile'
+    avatar: 'https://api.dicebear.com/7.x/avataaars/png?seed=Aria'
   },
   {
     id: 'xiaoli',
@@ -15,7 +15,7 @@ export const MEMBERS: Member[] = [
     role: '执行导演 / 攻略机器',
     desc: '精准控时，人肉导航，迷路是不可能的，这辈子都不可能迷路。',
     color: '#E3F2FD',
-    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Jake&mouth=smile'
+    avatar: 'https://api.dicebear.com/7.x/avataaars/png?seed=Felix'
   },
   {
     id: 'chichi',
@@ -23,7 +23,7 @@ export const MEMBERS: Member[] = [
     role: '美食顾问 / 干饭之王',
     desc: '味蕾雷达，能精准定位方圆五公里内最好吃的 Carbonara。',
     color: '#FFF3E0',
-    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Lily&mouth=smile'
+    avatar: 'https://api.dicebear.com/7.x/avataaars/png?seed=Lily'
   },
   {
     id: 'jiego',
@@ -31,7 +31,7 @@ export const MEMBERS: Member[] = [
     role: '后勤保障 / 首席气氛官',
     desc: '搬箱担当，全能守护者，主打一个稳重且幽默。',
     color: '#E0F2F1',
-    avatar: 'https://api.dicebear.com/7.x/adventurer/svg?seed=Mason&mouth=smile'
+    avatar: 'https://api.dicebear.com/7.x/avataaars/png?seed=Jack'
   }
 ];
 
@@ -53,7 +53,7 @@ export const ITINERARY: ItineraryDay[] = [
     city: 'Roma',
     weather: '☁️ 13-22°C',
     title: '永恒之城的初印象',
-    bgImage: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=800&auto=format&fit=crop',
+    bgImage: 'https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=800',
     transport: '机场快线直达 Termini 火车站。',
     food: {
       main: ['Trattoria dell\'Omo: 意式肉酱面世家'],
@@ -90,7 +90,7 @@ export const ITINERARY: ItineraryDay[] = [
     city: 'Roma',
     weather: '☀️ 14-23°C',
     title: '梵蒂冈：在神迹下屏息',
-    bgImage: 'https://images.unsplash.com/photo-1523305116853-4809a5601678?q=80&w=800&auto=format&fit=crop',
+    bgImage: 'https://images.unsplash.com/photo-1542820229-081e0c12af0b?auto=format&fit=crop&w=800',
     transport: '地铁 Linea A 转步行。',
     food: {
       main: ['Cantina e Cucina: 罗马必吃第一名 Carbonara'],
@@ -128,7 +128,7 @@ export const ITINERARY: ItineraryDay[] = [
     city: 'Roma',
     weather: '☀️ 14-23°C',
     title: '废墟中的帝国回响',
-    bgImage: 'https://images.unsplash.com/photo-15155426721ef-b6606a3ec663?q=80&w=800&auto=format&fit=crop',
+    bgImage: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800',
     transport: '地铁 Linea B (Colosseo站) -> 8路电车。',
     food: {
       main: ['Grazia & Graziella: 巷子里的跳口小牛肉', 'Tonnarello: 用平底锅端上来的快乐'],

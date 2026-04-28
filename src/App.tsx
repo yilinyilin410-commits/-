@@ -106,15 +106,15 @@ export default function App() {
                 />
                 
                 {/* Character Frame */}
-                <div className="chibi-frame w-20 h-20 mb-3 group-hover:rotate-3 transition-transform duration-500 bg-gradient-to-br from-white to-gray-50">
-                  <div className="absolute inset-0 flex items-center justify-center p-1">
-                    <img 
-                      src={member.avatar} 
-                      alt={member.name}
-                      className="w-full h-full object-contain filter drop-shadow-md group-hover:scale-110 transition-transform"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
+                <div className="chibi-frame w-20 h-20 mb-3 group-hover:rotate-3 transition-transform duration-500 bg-white shadow-inner flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5" />
+                  <img 
+                    src={member.avatar} 
+                    alt={member.name}
+                    className="w-full h-full object-contain relative z-10 p-1 group-hover:scale-110 transition-transform"
+                    referrerPolicy="no-referrer"
+                    loading="lazy"
+                  />
                 </div>
                 
                 <div className="text-center">
