@@ -54,14 +54,16 @@ export const ITINERARY: ItineraryDay[] = [
     weather: '☁️ 13-22°C',
     title: '跨越亚欧的初见',
     bgImage: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1000&auto=format&fit=crop',
-    transport: '落地搭乘 Leonardo Express 机场快线，32分钟直达 Termini。从此步行5分钟即达住宿。',
+    transport: '机场换乘 Leonardo Express (机场快线) 约 32 分钟直达 Termini。',
     food: {
       main: ['Trattoria dell\'Omo: 罗马肉酱面 (Amatriciana)'],
-      snack: ['Suppli (炸米团): 芝士拉丝必备']
+      snack: ['Suppli (炸米团): 必买意式炸米露']
     },
     details: [
-      '08:55 虹桥出发，经北京转机 18:30 落地罗马。',
-      '安顿行李后，直接下楼开启第一餐。'
+      '✈️ 08:55 虹桥出发 (CA1590) -> 北京转机 (CA939)',
+      '🛬 18:30 落地罗马菲乌米奇诺 T3',
+      '🏨 入住 Via Volturno 40 民宿 (Termini 北口步行 5min)',
+      '🍝 下楼直冲 Trattoria dell\'Omo 开启第一口罗马味'
     ],
     memberComment: {
       member: '小李',
@@ -75,15 +77,16 @@ export const ITINERARY: ItineraryDay[] = [
     weather: '☀️ 14-23°C',
     title: '神圣之巅与百年经典',
     bgImage: 'https://images.unsplash.com/photo-1531572753322-ad063cecc140?q=80&w=1000&auto=format&fit=crop',
-    transport: '地铁 Linea A 至 Ottaviano 站；下午全靠步行。',
+    transport: '地铁 Linea A (Ottaviano站) -> 下午全步行。',
     food: {
-      main: ['Cantina e Cucina: 浓郁 Carbonara'],
-      dessert: ['Giolitti: 百年开心果 Gelato', 'Maritozzo: 鲜奶油面包'],
-      drink: ['Tazza d\'Oro: 咖啡冰沙配奶油']
+      main: ['Cantina e Cucina (Google 4.6): 顶级 Carbonara'],
+      dessert: ['Giolitti: 百年开心果 Gelato', 'Maritozzo: 罗马特色奶油面包'],
+      drink: ['Tazza d\'Oro: 咖啡冰沙 (Granita)']
     },
     details: [
-      '梵蒂冈博物馆 (09:00预约) -> 西斯廷教堂 -> 圣彼得大教堂。',
-      '圣天使堡 -> 台伯河 -> 纳沃纳广场 -> 万神殿。'
+      '🏛 09:00 梵蒂冈博物馆 (西斯廷教堂) -> 圣彼得大教堂',
+      '🏰 步行圣天使堡 -> 穿越台伯河',
+      '⛲ 漫步纳沃纳广场 -> 万神殿 (傍晚光影绝佳)'
     ],
     memberComment: {
       member: '琳琳',
@@ -97,14 +100,15 @@ export const ITINERARY: ItineraryDay[] = [
     weather: '☀️ 14-23°C',
     title: '帝国印记与市井狂欢',
     bgImage: 'https://images.unsplash.com/photo-1552432552-06c099da0473?q=80&w=1000&auto=format&fit=crop',
-    transport: '地铁 Linea B (Colosseo)；傍晚 8路电车至 Trastevere。',
+    transport: '地铁 Linea B (Colosseo站) -> 8路电车。',
     food: {
-      main: ['Grazia & Graziella: 跳口小牛肉', 'Tonnarello: 平底锅意面'],
-      snack: ['Porchetta: 意式烤乳猪三明治']
+      main: ['Grazia & Graziella (Google 4.5): 跳口小牛肉', 'Tonnarello (Google 4.6): 平底锅意面'],
+      snack: ['Porchetta: 老城区烤乳猪三明治']
     },
     details: [
-      '古罗马斗兽场 -> 古罗马广场 -> 帕拉蒂尼山。',
-      '特雷维喷泉 (许愿池) -> Trastevere 烟火气漫步。'
+      '🏟 古罗马斗兽场 -> 古罗马广场 -> 帕拉蒂尼山',
+      '⛲ 特雷维喷泉 (许愿池) -> 威尼斯广场',
+      '🚋 搭乘8路电车抵达 Trastevere 烟火生活区'
     ],
     memberComment: {
       member: '杰哥',
@@ -118,15 +122,17 @@ export const ITINERARY: ItineraryDay[] = [
     weather: '⛅ 11-21°C',
     title: '山谷、丝柏与纯粹野味',
     bgImage: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1000&auto=format&fit=crop',
-    transport: '全程包车。穿越奥尔恰谷，抵达佛罗伦萨。',
+    transport: '全程包车游览奥尔恰谷 (Val d\'Orcia)。',
     food: {
       main: ['Trattoria La Buca delle Fate: 炖野猪肉'],
-      snack: ['Pecorino (羊奶酪): 皮恩扎特色'],
-      dessert: ['Panforte (果脯糕): 坚果力量']
+      snack: ['Pecorino (羊奶酪): 皮恩扎满城飘香'],
+      dessert: ['Panforte: 锡耶纳 Nannini 果脯糕']
     },
     details: [
-      '奥尔恰谷 -> 小耳朵教堂 -> 丝柏路。',
-      '理想之城皮恩扎 -> 锡耶纳田野广场。'
+      '⛪ 08:00 罗马出发 -> 小耳朵教堂 (Vitaleta)',
+      '🌳 摄影必去：丝柏树林 (Gladiator Hill)',
+      '🏘 理想之城皮恩扎 -> 锡耶纳田野广场',
+      '🏨 抵达佛罗伦萨 (Via di Mezzo 46)'
     ],
     memberComment: {
       member: '小李',
@@ -140,15 +146,16 @@ export const ITINERARY: ItineraryDay[] = [
     weather: '🌤️ 12-22°C',
     title: '文艺复兴与肉食朝圣',
     bgImage: 'https://images.unsplash.com/photo-1541088966844-60c5115103c0?q=80&w=1000&auto=format&fit=crop',
-    transport: '全天步行。',
+    transport: '翡冷翠全天步行。',
     food: {
-      main: ['Trattoria Zà Zà: 1kg T骨大牛排'],
-      snack: ['Da Rocco: 牛肚包 (Lampredotto)', 'I\' Girone De\' Ghiotti: 帕尼尼'],
-      dessert: ['Gelateria Vivoli: 老字号冰淇淋']
+      main: ['Trattoria Zà Zà (Google 4.4): 1kg T骨牛排!'],
+      snack: ['Da Rocco: 牛肚包 (Lampredotto)', 'I\' Girone De\' Ghiotti: 评分4.9帕尼尼'],
+      dessert: ['Gelateria Vivoli: 口感极其细腻']
     },
     details: [
-      '圣母百花大教堂 -> 圣安布罗乔市场。',
-      '乌菲兹美术馆 (14:00预约) -> 米开朗基罗广场落日。'
+      '⛪ 清晨圣母百花大教堂 -> 圣安布罗乔市场 (早餐)',
+      '🖼 14:00 乌菲兹美术馆 (凭预约免排队)',
+      '🌅 步行25min上坡至米开朗基罗广场看绝美落日'
     ],
     memberComment: {
       member: '吃吃',
@@ -162,14 +169,16 @@ export const ITINERARY: ItineraryDay[] = [
     weather: '⛅ 12-20°C',
     title: '高能转场与摩登初探',
     bgImage: 'https://images.unsplash.com/photo-1520116468419-955009859da5?q=80&w=1000&auto=format&fit=crop',
-    transport: '17:00 高铁 Firenze -> Milano Centrale；地铁 M3 线至 Missori。',
+    transport: '17:00 高铁 Firenze -> Milano Centrale (2h)。',
     food: {
-      main: ['Navigli Aperitivo: 运河自助餐'],
-      dessert: ['Caffè Gilli: 正宗提拉米苏']
+      main: ['Navigli Aperitivo: 运河区开胃酒文化'],
+      dessert: ['Caffè Gilli: 佛村最正统提拉米苏']
     },
     details: [
-      '佛罗伦萨补漏伴手礼 -> 高铁转场。',
-      'Navigli 运河区微醺夜生活。'
+      '🛍 佛罗伦萨市区伴手礼补漏 (皮具选购)',
+      '🚄 Firenze S.M.N. 搭乘高铁赴米兰',
+      '🏨 入住 Max Brown Hotel (Missori 站步行 8min)',
+      '🍹 晚间 Navigli 运河区感受米兰夜生活'
     ],
     memberComment: {
       member: '琳琳',
@@ -183,14 +192,16 @@ export const ITINERARY: ItineraryDay[] = [
     weather: '🌦️ 11-20°C',
     title: '摩登收官与踏上归途',
     bgImage: 'https://images.unsplash.com/photo-1513581166391-887a96ddeafd?q=80&w=1000&auto=format&fit=crop',
-    transport: '全天步行；18:30 机场快线 Malpensa Express 赴机场。',
+    transport: '全天步行 -> 18:30 机场快线赴 MXP 机场。',
     food: {
       main: ['Trattoria Milanese: 藏红花烩饭 & 炸小牛排'],
-      snack: ['Panzerotti Luini: 爆浆披萨饺']
+      snack: ['Panzerotti Luini: 大教堂旁必排队神店']
     },
     details: [
-      '米兰大教堂 (登顶) -> 埃马努埃莱二世长廊。',
-      '黄金四角区血拼。22:10 起飞离境。'
+      '⛪ 米兰大教堂 (建议登顶) -> 埃马努埃莱二世长廊',
+      '🏷 黄金四角区最后的血拼',
+      '🚆 18:30 Milano Centrale 赴 Malpensa 机场',
+      '✈️ 22:10 CA838 起飞 (记得留足退税时间)'
     ],
     memberComment: {
       member: '杰哥',

@@ -59,18 +59,21 @@ export default function App() {
             <motion.div 
               key={member.id}
               whileTap={{ scale: 0.95 }}
-              className="flex-shrink-0 text-center w-16"
+              className="flex-shrink-0 text-center w-20 group"
             >
               <div 
-                className="w-12 h-12 rounded-2xl flex items-center justify-center mb-1 mx-auto border-2 border-white shadow-sm"
-                style={{ backgroundColor: member.color + '33' }}
+                className="w-16 h-16 rounded-[20px] flex items-center justify-center mb-1.5 mx-auto border-2 border-white shadow-sm ring-1 ring-gray-100 group-hover:shadow-md transition-all"
+                style={{ backgroundColor: member.color + '44' }}
               >
-                <span className="text-xl">{member.avatar}</span>
+                <div className="text-3xl filter saturate-150 drop-shadow-sm">{member.avatar}</div>
               </div>
-              <p className="text-[10px] font-bold text-gray-800">{member.name}</p>
-              <p className="text-[8px] text-gray-500 font-semibold truncate leading-tight">
+              <p className="text-[11px] font-bold text-gray-800 mb-0.5">{member.name}</p>
+              <div 
+                className="text-[8px] font-bold px-1 py-0.5 rounded-md inline-block uppercase tracking-tighter"
+                style={{ color: 'var(--color-' + (member.id === 'linlin' ? 'macaron-pink-dark' : member.id === 'xiaoli' ? 'macaron-blue-dark' : member.id === 'chichi' ? 'macaron-orange-dark' : 'macaron-green-dark') + ')', backgroundColor: member.color + '22' }}
+              >
                 {member.role.split(' / ')[0]}
-              </p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -78,26 +81,30 @@ export default function App() {
 
       {/* 3. Quick Memo Cards */}
       <section className="px-5 py-4 grid grid-cols-2 gap-3 bg-white">
-        <div className="bg-[#F5F5F5] p-3 rounded-2xl">
-          <h4 className="text-[10px] font-bold mb-1 opacity-60 text-gray-500 uppercase tracking-wider">FLIGHTS</h4>
+        <div className="bg-[#F5F5F5] p-3 rounded-2xl border border-gray-100">
+          <h4 className="text-[10px] font-bold mb-2 opacity-60 text-gray-400 uppercase tracking-[0.1em] flex items-center gap-1">
+            <Plane className="w-3 h-3" /> FLIGHTS
+          </h4>
           {FLIGHTS.map((f, i) => (
             <div key={i} className="mb-2 last:mb-0">
-              <p className="text-[9px] font-bold leading-tight text-gray-700">{f.no}</p>
-              <p className="text-[8px] text-gray-400">{f.route.split(' -> ')[2] || f.route}落地 {f.type === 'go' ? '🛫' : '🛬'}</p>
+              <p className="text-[10px] font-bold leading-tight text-gray-700">{f.no}</p>
+              <p className="text-[8px] text-gray-400 font-medium">落地 {f.route.split(' -> ').slice(-1)} {f.type === 'go' ? '🛫' : '🛬'}</p>
             </div>
           ))}
         </div>
         
-        <div className="bg-[#F5F5F5] p-3 rounded-2xl">
-          <h4 className="text-[10px] font-bold mb-1 opacity-60 text-gray-500 uppercase tracking-wider">HOTELS</h4>
-          <div className="space-y-1">
+        <div className="bg-[#F5F5F5] p-3 rounded-2xl border border-gray-100">
+          <h4 className="text-[10px] font-bold mb-2 opacity-60 text-gray-400 uppercase tracking-[0.1em] flex items-center gap-1">
+            <MapPin className="w-3 h-3" /> HOTELS
+          </h4>
+          <div className="space-y-1.5">
             {HOTELS.map((h, i) => (
               <a 
                 key={i}
                 href={h.mapUrl} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-[9px] font-bold leading-tight text-gray-700 block border-b border-dashed border-gray-300 pb-0.5 last:border-0 truncate"
+                className="text-[9px] font-bold leading-tight text-gray-600 block border-b border-dashed border-gray-200 pb-1 last:border-0 truncate hover:text-macaron-orange-dark"
               >
                 {h.name} 📍
               </a>
@@ -107,9 +114,8 @@ export default function App() {
       </section>
 
       {/* 4. Daily Itinerary Section */}
-      <section className="px-4 py-8 space-y-8 bg-white overflow-y-auto custom-scrollbar">
+      <section className="px-4 py-8 space-y-10 bg-white overflow-y-auto custom-scrollbar">
         {ITINERARY.map((item, index) => {
-          const isEven = index % 2 === 0;
           const themeColor = item.day <= 3 ? 'macaron-pink-dark' : (item.day <= 5 ? 'macaron-orange-dark' : 'macaron-green-dark');
           const bgColor = item.day <= 3 ? 'macaron-pink' : (item.day <= 5 ? 'macaron-orange' : 'macaron-green');
           const borderColor = item.day <= 3 ? '#FFE0E0' : (item.day <= 5 ? '#FFF3E0' : '#E0F2F1');
@@ -117,90 +123,120 @@ export default function App() {
           return (
             <motion.div 
               key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="relative bg-white rounded-2xl p-4 shadow-sm border-2"
+              className="relative bg-white rounded-3xl p-5 shadow-sm border-2"
               style={{ borderColor: borderColor }}
             >
               {/* Day Tag */}
               <div 
-                className="absolute -top-2.5 left-4 px-2 py-0.5 text-white text-[9px] rounded font-bold z-10"
+                className="absolute -top-3 left-4 px-3 py-1 text-white text-[10px] rounded-full font-bold z-10 shadow-sm"
                 style={{ backgroundColor: `var(--color-${themeColor})` }}
               >
                 Day {item.day} • {item.date} {item.city}
               </div>
 
-              <div className={cn(
-                "flex items-start gap-4 mb-4",
-                isEven ? "flex-row" : "flex-row-reverse"
-              )}>
-                {/* Polaroid Frame */}
-                <div className={cn(
-                  "w-28 flex-shrink-0 relative",
-                  isEven ? "rotate-[-3deg]" : "rotate-[2deg]"
-                )}>
-                  <div className="washi-tape-theme" />
-                  <div className="polaroid-frame">
-                    <img 
-                      src={item.bgImage} 
-                      alt={item.title} 
-                      className="w-full h-24 object-cover"
-                    />
-                    <div className="mt-1 text-[8px] text-center italic font-serif opacity-60 truncate">
-                      {item.city} Moments
+              <div className="flex flex-col gap-5">
+                {/* Header Content */}
+                <div className="flex justify-between items-start gap-3">
+                  <div className="flex-1">
+                    <h2 className="text-lg font-bold text-gray-900 leading-tight mb-1">{item.title}</h2>
+                    <div className="flex items-center text-[10px] text-gray-400 font-bold">
+                       <Cloudy className="w-3 h-3 mr-1" /> {item.weather}
+                    </div>
+                  </div>
+                  {/* Polaroid Frame */}
+                  <div className={cn(
+                    "w-24 flex-shrink-0 relative",
+                    index % 2 === 0 ? "rotate-[-3deg]" : "rotate-[2deg]"
+                  )}>
+                    <div className="washi-tape-theme" />
+                    <div className="polaroid-frame shadow-md">
+                      <img 
+                        src={item.bgImage} 
+                        alt={item.title} 
+                        className="w-full h-20 object-cover"
+                      />
                     </div>
                   </div>
                 </div>
 
-                {/* Details */}
-                <div className="flex-1 pt-2">
-                  <div className="flex items-center text-[10px] text-gray-400 font-bold mb-2">
-                    <span className="mr-1">🌤</span> {item.weather.split(' ')[1]}
-                  </div>
-                  <div className="space-y-3">
-                    <div className="text-[10px] leading-tight">
-                      <p className="font-bold uppercase opacity-50 mb-1" style={{ color: `var(--color-${themeColor})` }}>交通/动线</p>
-                      <div className="flex flex-col gap-1">
-                        {item.details.map((detail, idx) => {
-                          const parts = detail.split(/->|→/);
-                          return (
-                            <div key={idx} className="flex items-start gap-1">
-                               <span className="leading-tight">
-                                 {parts.map((p, pIdx) => (
-                                   <span key={pIdx}>
-                                     <MapLink place={p.trim().replace(/\(.*?\)/g, '')}>{p.trim()}</MapLink>
-                                     {pIdx < parts.length - 1 && <span className="text-gray-300 mx-0.5">→</span>}
-                                   </span>
-                                 ))}
-                               </span>
-                            </div>
-                          );
-                        })}
-                      </div>
+                {/* Details Grid */}
+                <div className="grid grid-cols-1 gap-4">
+                  {/* Route */}
+                  <div className="bg-gray-50/50 p-3 rounded-2xl border border-gray-100">
+                    <p className="text-[10px] font-bold uppercase opacity-60 mb-2 flex items-center gap-1" style={{ color: `var(--color-${themeColor})` }}>
+                      <Navigation className="w-3 h-3" /> 详细攻略/动线
+                    </p>
+                    <div className="space-y-2">
+                       {item.details.map((detail, idx) => {
+                         const parts = detail.split(/->|→/);
+                         return (
+                           <div key={idx} className="flex items-start gap-1.5 text-[11px] leading-relaxed text-gray-600">
+                              <span className="mt-1 w-1 h-1 rounded-full bg-gray-300 flex-shrink-0" />
+                              <span>
+                                {parts.map((p, pIdx) => (
+                                  <span key={pIdx}>
+                                    <MapLink place={p.trim().replace(/[✈️🛬🏨🍝🏛🏰⛲🌅🛍🚄🍹🏷🚆]/gu, '').replace(/\(.*?\)/g, '').trim()}>{p.trim()}</MapLink>
+                                    {pIdx < parts.length - 1 && <span className="text-gray-300 mx-1">→</span>}
+                                  </span>
+                                ))}
+                              </span>
+                           </div>
+                         );
+                       })}
                     </div>
+                  </div>
 
-                    <div className="text-[10px] leading-tight">
-                      <p className="font-bold uppercase opacity-50 mb-1 text-macaron-orange-dark">灵魂美食</p>
-                      <div className="flex flex-wrap gap-x-2 gap-y-1">
-                        {item.food.main?.map((f, i) => (
-                          <MapLink key={i} place={f.split(':')[0].trim()}>{f.split(':')[0].trim()}</MapLink>
+                  {/* Food */}
+                  <div className="bg-gray-50/50 p-3 rounded-2xl border border-gray-100">
+                    <p className="text-[10px] font-bold uppercase opacity-60 mb-2 flex items-center gap-1" style={{ color: 'var(--color-macaron-orange-dark)' }}>
+                      <Utensils className="w-3 h-3" /> 灵魂美食安利
+                    </p>
+                    <div className="space-y-2">
+                      {item.food.main && (
+                        <div className="flex flex-col gap-1.5">
+                          {item.food.main.map((f, i) => {
+                            const [name, desc] = f.split(':');
+                            return (
+                              <div key={i} className="text-[11px] flex items-center gap-1">
+                                <MapLink place={name.trim()}>{name.trim()}</MapLink>
+                                <span className="text-[10px] text-gray-400 font-medium">{desc}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                      <div className="flex flex-wrap gap-1.5 mt-1">
+                        {item.food.snack?.map((f, i) => (
+                          <span key={i} className="text-[9px] bg-white border border-orange-100 text-macaron-orange-dark px-1.5 py-0.5 rounded-md font-bold">
+                            #{f.includes(':') ? f.split(':')[0] : f}
+                          </span>
+                        ))}
+                        {item.food.dessert?.map((f, i) => (
+                          <span key={i} className="text-[9px] bg-pink-50 border border-pink-100 text-macaron-pink-dark px-1.5 py-0.5 rounded-md font-bold">
+                            🍦 {f.includes(':') ? f.split(':')[0] : f}
+                          </span>
                         ))}
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Chat Bubble - Integrated style */}
-              <div 
-                className="rounded-xl p-2 text-[9px] italic flex items-center"
-                style={{ backgroundColor: `var(--color-${bgColor})`, opacity: 0.8 }}
-              >
-                <div className="w-6 h-6 bg-white/50 rounded-full mr-2 flex items-center justify-center shrink-0 shadow-sm">
-                  {MEMBERS.find(m => m.name === item.memberComment.member)?.avatar}
+                {/* Chat Bubble - Integrated style */}
+                <div 
+                  className="rounded-2xl p-3 text-[10px] italic flex items-start gap-2 relative shadow-inner"
+                  style={{ backgroundColor: `var(--color-${bgColor})`, opacity: 0.9 }}
+                >
+                  <div className="w-8 h-8 bg-white rounded-xl flex items-center justify-center shrink-0 shadow-sm border border-white">
+                    {MEMBERS.find(m => m.name === item.memberComment.member)?.avatar}
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-bold text-[9px] opacity-40 mb-0.5 uppercase">{item.memberComment.member} 提醒：</p>
+                    <span className="text-gray-700 font-medium leading-relaxed">“{item.memberComment.text}”</span>
+                  </div>
                 </div>
-                <span className="text-gray-700">“{item.memberComment.text}”</span>
               </div>
             </motion.div>
           );
