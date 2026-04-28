@@ -7,6 +7,13 @@ export interface Member {
   avatar: string;
 }
 
+export interface Attraction {
+  name: string;
+  intro: string;
+  play: string;
+  feature: string;
+}
+
 export interface ItineraryDay {
   day: number;
   date: string;
@@ -22,6 +29,7 @@ export interface ItineraryDay {
     dessert?: string[];
   };
   details: string[];
+  attractions?: Attraction[];
   memberComment: {
     member: string;
     text: string;
