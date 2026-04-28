@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-macaron-pink: #FFD5D5;
+  --color-macaron-pink-dark: #D81B60;
+  --color-macaron-blue: #E3F2FD;
+  --color-macaron-blue-dark: #2196F3;
+  --color-macaron-orange: #FFF3E0;
+  --color-macaron-orange-dark: #FF9800;
+  --color-macaron-green: #E0F2F1;
+  --color-macaron-green-dark: #009688;
+  --color-macaron-white: #FDF6F0;
+  --color-xiaohongshu: #FF2442;
+  
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-3xl: 40px;
+
+  --font-serif: "Playfair Display", "Zhi Mang Xing", serif;
+  --font-sans: "Nunito", "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-macaron-white text-gray-800 font-sans leading-relaxed;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .mask-gradient {
+    mask-image: linear-gradient(to bottom, black 85%, transparent);
+  }
+  
+  .handwritten {
+    @apply font-serif;
+  }
+
+  .polaroid-frame {
+    @apply bg-white p-1 pb-4 shadow-sm transform border border-gray-100 transition-transform hover:rotate-0;
+  }
+
+  /* Highlighter effect for links - matching Geometric Balance */
+  .map-link {
+    @apply relative inline-block font-semibold text-gray-900 transition-all px-0.5;
+    background-image: linear-gradient(120deg, #FFF176 0%, #FFF176 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.3em;
+    background-position: 0 88%;
+  }
+  .map-link:hover {
+    background-size: 100% 88%;
+    @apply text-gray-800;
+  }
+
+  .washi-tape-theme {
+    @apply absolute -top-1 left-1/2 -translate-x-1/2 w-8 h-3 bg-blue-100 opacity-60 z-10;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #E0E0E0;
+    border-radius: 10px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Zhi+Mang+Xing&family=Nunito:wght@400;600;700&display=swap');
